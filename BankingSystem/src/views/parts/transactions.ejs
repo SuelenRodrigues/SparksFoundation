@@ -1,0 +1,22 @@
+<aside>
+    <table class="data-table">
+        <caption>Transactions Database</caption>
+        <thead>
+            <tr>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% transactions.forEach(transaction => {%>
+            <tr>
+                <td><%= transaction.sender%></td>
+                <td><%= transaction.receiver%></td>
+                <td><%= transaction.amount%></td>
+            </tr>
+            <% });  %>
+        </tbody>
+    </table>
+</aside>
+</main>

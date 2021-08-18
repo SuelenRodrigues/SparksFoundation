@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald Banking System</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/customers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        
+            <img class="background-blue" src="/images/background1.svg" alt="blue background">
+        
+        <div class="logo">
+            <a href="/"><img src="images/logo1.png" alt="emerald logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/customers">Customers</a></li>
+                <li><a href="/transactions">Transfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="main-content">
+            <h5>Welcome</h5>
+            <h1>Emerald Banking System</h1>
+            <p>To view all transfers click in Transactions.<br>To start a new transaction click in Customers.</p>
+            <div class="div-buttons">
+                <a href="/customers" class="buttons">View All Customers</a>
+                <a href="/transactions" class="buttons">View All Transactions</a>
+            </div>
+        </section>
+        
+    <%- include(`parts/${page}`) %>
+
+    <footer>
+        
+        <a href="/"><img src="/images/logo.png" alt="emerald logo"></a>
+        
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/customers">Customers</a></li>
+                <li><a href="/transactions">Transactions</a></li>
+            </ul>
+    </footer>
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

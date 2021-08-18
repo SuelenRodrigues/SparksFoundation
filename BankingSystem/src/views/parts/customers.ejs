@@ -1,0 +1,60 @@
+<aside>
+    <table class="data-table">
+        <caption>Customers Database</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Current Balance</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% customers.forEach(customer => {%>
+            <tr>
+                <td><a href="/customer/'<%= customer.name %>'"><%= customer.name%></a></td>
+                <td><%= customer.email%></td>
+                <td><%= customer.balance%></td>
+                <td><a href="#" onclick="Modal.open('<%= customer.name%>')" class='buttons openModal'>Transfer</a></td>
+            </tr>
+            <% });  %>
+        </tbody>
+    </table>
+</aside>
+</main>
+<section class="modal-overlay">
+    <div class="modal">
+        <div class="modal-content">
+            <div id="form">
+                <h2>New Transaction</h2>
+                <form action="/customers/create" method="POST">
+                <div class="input-group">
+                    <label for-id="senderTransfer" class="sr-only">Sender</label>
+                    <input type="text" id="senderTransfer" name="senderTransfer" value="" required readonly>
+                </div>
+                <div class="input-group">
+                    <label for="receiver" class="sr-only">Receiver</label>
+                    <select name="receiver" id="receiver" required>
+                        <option value="">Select receiver</option>
+                        <% customers.forEach(customer => {%>
+                        <option value="<%= customer.name%>"><%= customer.name%></option>
+                        <% });  %>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="amount" class="sr-only">Amount</label>
+                    <input type="number" id="amount" name="amount" step="0.01" placeholder="0.00" required>
+                </div>
+                <div class="input-group actions">
+                    <a href="#" onclick="Modal.close()" class="buttons button cancel">Cancel</a>
+                    <button class='buttons'>Transfer</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

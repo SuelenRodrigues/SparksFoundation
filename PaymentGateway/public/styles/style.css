@@ -1,0 +1,326 @@
+/*This is used to reset the initial settings the browsers have*/
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/*This is used to create variables to be reused in several places*/
+html {
+  --yellow: #f6cc76;
+  --green: #96cebc;
+  --light-green: #a5d5c8;
+  --purple: #9e96ce; /*7B88E8*/
+  --blue: #4b75be;
+  --white-background: #fefefe;
+  --font-color: #333333;
+  --lighter-green: #ebfffa;
+  --lighter-yellow: #f5dcab;
+
+  /*1 rem = 16px (User Agent) = 100% 
+      16px - 100%
+      10px  - X 
+      X = 62.5*/
+  font-size: 62.5%; /*10px*/
+}
+
+body {
+  height: 100vh;
+  background-color: var(--white-background);
+}
+
+body,
+button,
+input,
+textarea {
+  /*If I put font-size and font-family in the body selector the button, input and textarea will not receive these changes. This is why 
+      it is separated here.*/
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: "Poppins", sans-serif;
+  color: var(--font-color);
+}
+
+/*---------- HIDE LABEL -----------*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*---------- FONTS and LINKS ----------*/
+p {
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 5.5rem;
+  color: var(--yellow);
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 2rem;
+  font-family: "Hachi Maru Pop", cursive;
+  color: var(--yellow);
+}
+
+a {
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--purple);
+  transition: 0.4s;
+}
+
+/*---------- BUTTONS ----------*/
+button,
+button.donate-button,
+button.volunteer-button {
+  width: 10rem;
+  height: 4rem;
+  background-color: var(--green);
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button.volunteer-button {
+  background-color: var(--yellow);
+}
+
+button:hover,
+button.donate-button:hover {
+  background-color: var(--light-green);
+  transition: 0.4s;
+}
+
+button.volunteer-button:hover {
+  background-color: var(--lighter-yellow);
+  transition: 0.4s;
+}
+
+/*---------- BACKGROUND ----------*/
+.container {
+  background-image: linear-gradient(
+    to right,
+    var(--white-background),
+    var(--lighter-green),
+    var(--white-background)
+  );
+}
+
+/*---------- HEADER ----------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -0.5rem 0.9rem 0.5rem 0;
+}
+
+header a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+/*---------- MAIN SECTION ----------*/
+main .main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76rem;
+}
+
+.main-section .text-main-section {
+  text-align: center;
+  line-height: 15rem;
+  margin-left: 5rem;
+  order: 1;
+}
+
+.main-section .text-main-section p {
+  line-height: 3rem;
+}
+
+main .main-section img {
+  width: 60rem;
+  order: 2;
+}
+
+/*---------- ABOUT US ----------*/
+section#about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 53rem;
+  margin-top: 0;
+}
+
+section#about-us p {
+  text-align: justify;
+  margin-right: 2rem;
+  line-height: 3rem;
+}
+
+section#about-us img {
+  width: 70rem;
+}
+
+/*---------- HOW CAN I HELP ----------*/
+section#how-can-i-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 53rem;
+  margin-left: 5rem;
+}
+
+section#how-can-i-help p {
+  text-align: justify;
+  line-height: 3rem;
+}
+
+section#how-can-i-help img {
+  width: 50rem;
+  order: 2;
+}
+
+/*---------- CONTACT US ----------*/
+section#contact-us {
+  background-color: rgba(158, 150, 206, 0.4);
+  height: 53rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+section#contact-us h2 {
+  text-align: center;
+}
+
+form {
+  max-width: 50rem;
+  margin: auto;
+}
+
+.input-group {
+  margin-top: 4rem;
+}
+
+input {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.8rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 15rem;
+  padding: 0.8rem;
+  border-radius: 0.25rem;
+}
+
+#contact-us button {
+  width: 15rem;
+}
+
+/*---------- FOOTER ----------*/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(150, 206, 188, 0.3);
+  padding: 2rem;
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+footer #footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+footer img {
+  width: 5rem;
+}
+
+footer .social-media {
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+/*--------- RESPONSIVE -----------*/
+@media (max-width: 994px) {
+  html {
+    font-size: 50%;
+  }
+  header,
+  main .main-section,
+  section#about-us,
+  section#how-can-i-help {
+    display: block;
+    align-items: center;
+  }
+
+  header ul {
+    justify-content: space-evenly;
+  }
+
+  main .main-section {
+    height: auto;
+  }
+
+  main .main-section img,
+  section#about-us img,
+  section#how-can-i-help img {
+    width: 50rem;
+    display: block;
+    margin: 3rem auto 0 auto;
+  }
+
+  section#about-us {
+    height: auto;
+    margin: 5rem;
+  }
+
+  section#how-can-i-help {
+    height: auto;
+    margin: 5rem;
+  }
+
+  .social-media a {
+    display: block;
+    margin-left: 0;
+  }
+}

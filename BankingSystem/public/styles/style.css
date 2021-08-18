@@ -1,0 +1,282 @@
+/*This is used to reset the initial settings the browsers have*/
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/*This is used to create variables to be reused in several places*/
+html {
+  --dark-blue-background: #262b43;
+  --dark-green-background: #35572a;
+  --bright-green-background: #40bb15;
+  --font-color: #fff;
+  --light-blue: #23a6f0;
+  --hover: #e7957c;
+  --light-gray: #969cb3;
+  --dark-gray: #5f6472;
+  --red: #e92929;
+
+  /*1 rem = 16px (User Agent) = 100% 
+      16px - 100%
+      10px  - X 
+      X = 62,5*/
+  font-size: 100%; /*10px*/
+}
+
+body {
+  height: 100vh;
+  background: var(--dark-blue-background);
+  
+}
+
+body,
+button,
+input,
+textarea {
+  /*clamp = size range*/
+  /*If I put font-size and font-family in the body selector the button, input and textarea will not receive these changes. This is why 
+      it is separated here.*/
+  font-size: clamp(14px, 1.6rem, 2vw);
+  font-family: "Montserrat", sans-serif;
+  color: var(--font-color);
+}
+
+/*---------- HIDE LABEL -----------*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+a {
+  color: var(--font-color);
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+a:hover {
+  opacity: 1;
+  transition: 0.7s;
+  color: var(--font-color);
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--bright-green-background);
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*---------- HEADER ----------*/
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header .background-blue {
+  position: absolute;
+  top: 0;
+  z-index: -99;
+  width: 40rem;
+}
+
+header .logo img,
+footer .logo img {
+  width: 10rem;
+  clip-path: inset(34% 13% 21% 13%);
+}
+
+header .logo img {
+  margin-top: -3rem;
+}
+
+header ul,
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: -2rem 0 0 2rem;
+  padding: 0;
+  gap: 1rem;
+}
+
+/*---------- MAIN ----------*/
+
+main.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 2rem;
+  min-height: 72vh;
+  padding-bottom: 4.5rem;
+  position: relative;
+  
+}
+
+main .main-content {
+  height: 32rem;
+  width: 31rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-basis: 32rem;
+}
+
+.main-content .div-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.buttons {
+  background: var(--bright-green-background);
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  border-radius: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*---------- ASIDE ----------*/
+
+aside {
+  position: relative;
+  flex-basis: 36rem;
+}
+
+aside .main-img {
+  margin: 4rem 0rem 0 2rem;
+  width: 34rem;
+  
+}
+
+aside .main-img img{
+  width: 34rem;
+  border-radius: 0 12rem 1rem 8rem;
+}
+
+aside .main-img2 {
+  position: absolute;
+  top: -2.4rem;
+  left: -3rem;
+  z-index: 10;
+  
+}
+
+aside .main-img2 img{
+  width: 8rem;
+}
+
+aside .main-img3 {
+  position: absolute;
+  z-index: 10;
+  left: 14rem;
+  
+}
+
+aside .main-img3 img{
+  width: 12rem;
+}
+
+/*---------- FOOTER ----------*/
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30rem;
+  background: var(--font-color);
+  color: var(--dark-blue-background);
+  height: 4.5rem;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+
+footer img {
+
+  width: 7rem;
+
+}
+
+footer ul {
+  margin: 0.1rem 2rem 0 0;
+}
+
+footer a {
+  color: var(--dark-blue-background);
+}
+
+footer a:hover {
+  color: var(--light-blue);
+}
+
+/*---------- RESPONSIVE ----------*/
+@media (max-width: 945px){
+  html{
+    font-size: 79%;
+  }
+  main.container{
+    display: block;
+  }
+
+  aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  aside .main-img {
+    margin: 0;
+    position: relative;
+  }
+
+  aside .main-img2{
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  aside .main-img2 img{
+    width: 6rem;
+  }
+
+  aside .main-img3{
+    position: relative;
+    left: 0;
+  }
+
+  aside .main-img3 img{
+    width: 10rem;
+  }
+
+  footer{
+gap: 22rem;
+  }
+  
+}
