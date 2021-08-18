@@ -1,5 +1,5 @@
 # TheSparksFoundation
-<h1 align="center"><a href="http://emeraldbank.herokuapp.com" target="_blank"><img src="/public/images/logo.png" alt="Emerald Banking System Logo"></a></h1>
+<h1 align="center"><a href="http://emeraldbank.herokuapp.com" target="_blank"><img src="./public/images/logo.png" alt="Emerald Banking System Logo"></a></h1>
 <p align="center" styte="color: #35572a;">Banking System created as part of the first task for the summer internship at The Sparks Foundation</p>
 <p align="center">The website was hosted on <a href="http://heroku.com" target="_blank">Heroku</a> and can be accessed by clicling <a href="http://emeraldbank.herokuapp.com" target="_blank">here</a>.</p>
 
