@@ -1,0 +1,20 @@
+{
+  "name": "PaymentGateway",
+  "version": "1.0.0",
+  "description": "NGO website created as the second web development task for the summer internship at The Sparks Foundation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.ejs"
+  },
+  "keywords": [
+    "NGO",
+    "Donation website",
+    "Payment Gateway"
+  ],
+  "author": "Suelen Rodrigues",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}

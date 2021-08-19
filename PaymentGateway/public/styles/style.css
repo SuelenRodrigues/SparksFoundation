@@ -23,7 +23,7 @@ html {
       16px - 100%
       10px  - X 
       X = 62.5*/
-  font-size: 62.5%; /*10px*/
+  font-size: 70%; /*10px*/
 }
 
 body {
@@ -176,6 +176,7 @@ section#about-us {
   justify-content: space-between;
   height: 53rem;
   margin-top: 0;
+  margin-right: 5rem;
 }
 
 section#about-us p {
@@ -283,7 +284,7 @@ footer ul {
 /*--------- RESPONSIVE -----------*/
 @media (max-width: 994px) {
   html {
-    font-size: 50%;
+    font-size: 70%;
   }
   header,
   main .main-section,
